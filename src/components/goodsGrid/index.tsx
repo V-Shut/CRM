@@ -19,10 +19,8 @@ export const GoodsGrid = () => {
 				},
 			}
 		);
-
-		if (!response.ok) {
-			throw new Error("Error deleting item");
-		}
+    
+    fetchGoods();
 	};
 
 	const fetchGoods = async () => {
@@ -47,9 +45,6 @@ export const GoodsGrid = () => {
 				body: JSON.stringify(data),
 			}
 		);
-		if (!response.ok) {
-			throw new Error("Error sending data to server");
-		}
 
 		fetchGoods();
 		return response.json();
@@ -58,10 +53,6 @@ export const GoodsGrid = () => {
 	useEffect(() => {
 		fetchGoods();
 	}, []);
-
-	useEffect(() => {
-		fetchGoods();
-	}, [sendData, deleteItem]);
 
 	return (
 		<>
