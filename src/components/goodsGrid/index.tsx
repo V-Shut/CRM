@@ -9,12 +9,15 @@ export const GoodsGrid = () => {
 	const [modal, setModal] = useState(false);
 
 	const deleteItem = async (id: number) => {
-		const response = await fetch(`https://crm-server-orcin.vercel.app/products/${id}`, {
-			method: "DELETE",
-			headers: {
-				"Content-Type": "application/json",
-			},
-		});
+		const response = await fetch(
+			`https://crm-server-orcin.vercel.app/products/${id}`,
+			{
+				method: "DELETE",
+				headers: {
+					"Content-Type": "application/json",
+				},
+			}
+		);
 
 		if (!response.ok) {
 			throw new Error("Error deleting item");
@@ -24,7 +27,9 @@ export const GoodsGrid = () => {
 	};
 
 	const fetchGoods = async () => {
-		const response = await fetch("https://crm-server-orcin.vercel.app/products");
+		const response = await fetch(
+			"https://crm-server-orcin.vercel.app/products"
+		);
 		if (!response.ok) {
 			throw new Error("Error fetching data");
 		}
@@ -33,21 +38,26 @@ export const GoodsGrid = () => {
 	};
 
 	const sendData = useCallback(async (data: Omit<Product, "id">) => {
-		const response = await fetch("https://crm-server-orcin.vercel.app/products", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(data),
-		});
+		const response = await fetch(
+			"https://crm-server-orcin.vercel.app/products",
+			{
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(data),
+			}
+		);
 		if (!response.ok) {
-			throw new Error('Error sending data to server');
-    }
-    
-    fetchGoods();
-    return response.json();
-  }, []);
-  
+			throw new Error("Error sending data to server");
+		}
+
+		setTimeout(() => {
+			fetchGoods();
+		}, 500);
+
+		return response.json();
+	}, []);
 
 	useEffect(() => {
 		fetchGoods();
@@ -56,7 +66,10 @@ export const GoodsGrid = () => {
 	return (
 		<>
 			{modal && (
-				<Modal setModal={setModal} sendData={sendData} />
+				<Modal
+					setModal={setModal}
+					sendData={sendData}
+				/>
 			)}
 			<button
 				className="add_good"
