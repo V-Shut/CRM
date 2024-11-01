@@ -25,7 +25,7 @@ export const GoodsGrid = () => {
 
 	const fetchGoods = async () => {
 		const response = await fetch(
-			"https://crm-chi-eight.vercel.app/"
+			"https://crm-server-phi.vercel.app/products"
 		);
 		if (!response.ok) {
 			throw new Error("Error fetching data");
@@ -36,7 +36,7 @@ export const GoodsGrid = () => {
 
 	const sendData = async (data: Omit<Product, "id">) => {
 		const response = await fetch(
-			"https://crm-chi-eight.vercel.app/",
+			"https://crm-server-phi.vercel.app/products",
 			{
 				method: "POST",
 				headers: {
