@@ -7,7 +7,7 @@ export const GoodDetails = () => {
 	const path = window.location.href.split("/").pop();
 
 	async function fetchGood(id: number) {
-		const data = await fetch(`http://localhost:3001/products/${id}`).then(
+		const data = await fetch(`https://crm-server-orcin.vercel.app/products/${id}`).then(
 			(response) => {
 				if (!response.ok) {
 					throw new Error("Error fetching data");

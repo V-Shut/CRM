@@ -9,7 +9,7 @@ export const GoodsGrid = () => {
 	const [modal, setModal] = useState(false);
 
 	const deleteItem = async (id: number) => {
-		const response = await fetch(`http://localhost:3001/products/${id}`, {
+		const response = await fetch(`https://crm-server-orcin.vercel.app/products/${id}`, {
 			method: "DELETE",
 			headers: {
 				"Content-Type": "application/json",
@@ -24,7 +24,7 @@ export const GoodsGrid = () => {
 	};
 
 	const fetchGoods = async () => {
-		const response = await fetch("http://localhost:3001/products");
+		const response = await fetch("https://crm-server-orcin.vercel.app/products");
 		if (!response.ok) {
 			throw new Error("Error fetching data");
 		}
@@ -33,7 +33,7 @@ export const GoodsGrid = () => {
 	};
 
 	const sendData = useCallback(async (data: Omit<Product, "id">) => {
-		const response = await fetch("http://localhost:3001/products", {
+		const response = await fetch("https://crm-server-orcin.vercel.app/products", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

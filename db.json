@@ -121,87 +121,15 @@
       "comments": []
     },
     {
-      "id": "14",
-      "imageUrl": "https://example.com/images/product14.jpg",
-      "name": "Oppo Find X3 Pro",
-      "count": 2,
-      "size": {
-        "width": 74,
-        "height": 163
-      },
-      "weight": "193g",
-      "comments": []
-    },
-    {
-      "id": "15",
-      "imageUrl": "https://example.com/images/product15.jpg",
-      "name": "Huawei P40 Pro",
-      "count": 2,
-      "size": {
-        "width": 72,
-        "height": 158
-      },
-      "weight": "209g",
-      "comments": []
-    },
-    {
-      "id": "ebb6",
-      "imageUrl": "Harry",
-      "name": "Potter",
-      "count": 5,
-      "size": {
-        "width": 100,
-        "height": 100
-      },
-      "weight": "100",
-      "comments": []
-    },
-    {
-      "id": "799a",
-      "imageUrl": "sponge",
-      "name": "bob",
-      "count": 2,
-      "size": {
-        "width": 2,
-        "height": 2
-      },
-      "weight": "1232321",
-      "comments": []
-    },
-    {
-      "id": "8ece",
-      "imageUrl": "sda",
-      "name": "sdas",
-      "count": 123,
-      "size": {
-        "width": 2312,
-        "height": 2312
-      },
-      "weight": "dad",
-      "comments": []
-    },
-    {
-      "id": "54e4",
-      "imageUrl": "adasd",
-      "name": "asdasd",
-      "count": 2313,
+      "id": "692b",
+      "imageUrl": "фівф",
+      "name": "галя",
+      "count": 213,
       "size": {
         "width": 21312,
-        "height": 21312
+        "height": 213
       },
-      "weight": "adad",
-      "comments": []
-    },
-    {
-      "id": "e1eb",
-      "imageUrl": "2312",
-      "name": "2312",
-      "count": 21312,
-      "size": {
-        "width": 123,
-        "height": 123
-      },
-      "weight": "1231",
+      "weight": "234231",
       "comments": []
     }
   ]

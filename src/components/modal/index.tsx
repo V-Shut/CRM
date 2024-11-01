@@ -98,7 +98,7 @@ export const Modal: React.FC<Props> = ({ setModal, sendData }) => {
 						onChange={(e) => setHeight(e.target.value)}
 					/>
 					<input
-						type="text"
+						type="number"
 						placeholder={inputPlaceholders[5]}
 						className="good_params"
 						value={weight}
