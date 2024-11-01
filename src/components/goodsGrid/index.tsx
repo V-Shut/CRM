@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 import { Product } from "../../types";
 import "./style.css";
 import { GoodCard } from "../goodCard";
@@ -10,8 +10,8 @@ export const GoodsGrid = () => {
 	const [modal, setModal] = useState(false);
 
 	const deleteItem = async (id: number) => {
-		const response = await fetch(
-			`https://crm-server-orcin.vercel.app/products/${id}`,
+		await fetch(
+			`https://crm-server-phi.vercel.app/products/${id}`,
 			{
 				method: "DELETE",
 				headers: {
@@ -25,7 +25,7 @@ export const GoodsGrid = () => {
 
 	const fetchGoods = async () => {
 		const response = await fetch(
-			"https://crm-server-orcin.vercel.app/products"
+			"https://crm-server-phi.vercel.app/products"
 		);
 		if (!response.ok) {
 			throw new Error("Error fetching data");
@@ -36,7 +36,7 @@ export const GoodsGrid = () => {
 
 	const sendData = async (data: Omit<Product, "id">) => {
 		const response = await fetch(
-			"https://crm-server-orcin.vercel.app/products",
+			"https://crm-server-phi.vercel.app/products",
 			{
 				method: "POST",
 				headers: {

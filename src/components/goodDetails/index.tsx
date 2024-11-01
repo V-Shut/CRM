@@ -7,7 +7,7 @@ export const GoodDetails = () => {
 	const path = window.location.href.split("/").pop();
 
 	async function fetchGood(id: number) {
-		const data = await fetch(`https://crm-server-orcin.vercel.app/products/${id}`).then(
+		const data = await fetch(`https://crm-server-phi.vercel.app/products/${id}`).then(
 			(response) => {
 				if (!response.ok) {
 					throw new Error("Error fetching data");
@@ -23,7 +23,7 @@ export const GoodDetails = () => {
 		if (path) {
       fetchGood(+path);
 		}
-	}, []);
+	}, [path]);
 
 	return <div className="example">{good?.name}</div>;
 };
