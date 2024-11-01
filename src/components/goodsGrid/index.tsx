@@ -6,7 +6,7 @@ import { Modal } from "../modal";
 
 export const GoodsGrid = () => {
 	const [goodsList, setGoodsList] = useState<Product[] | undefined>(undefined);
-	const [modal, setModal] = useState(true);
+	const [modal, setModal] = useState(false);
 
 	const deleteItem = async (id: number) => {
 		const response = await fetch(`http://localhost:3001/products/${id}`, {
