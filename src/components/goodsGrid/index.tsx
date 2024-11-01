@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState, useCallback } from "react";
 import { Product } from "../../types";
 import "./style.css";
@@ -22,8 +23,6 @@ export const GoodsGrid = () => {
 		if (!response.ok) {
 			throw new Error("Error deleting item");
 		}
-
-		fetchGoods();
 	};
 
 	const fetchGoods = async () => {
@@ -37,7 +36,7 @@ export const GoodsGrid = () => {
 		setGoodsList(data);
 	};
 
-	const sendData = useCallback(async (data: Omit<Product, "id">) => {
+	const sendData = async (data: Omit<Product, "id">) => {
 		const response = await fetch(
 			"https://crm-server-orcin.vercel.app/products",
 			{
@@ -52,16 +51,17 @@ export const GoodsGrid = () => {
 			throw new Error("Error sending data to server");
 		}
 
-		setTimeout(() => {
-			fetchGoods();
-		}, 500);
-
+		fetchGoods();
 		return response.json();
-	}, []);
+	};
 
 	useEffect(() => {
 		fetchGoods();
 	}, []);
+
+	useEffect(() => {
+		fetchGoods();
+	}, [sendData, deleteItem]);
 
 	return (
 		<>
